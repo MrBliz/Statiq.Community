@@ -1,0 +1,28 @@
+{
+  "name": "statiq.community",
+  "version": "0.0.1",
+  "description": "A community site for Statiq.Dev developers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tailwindcss -i ./wwwroot/css/input.css -o ./output/styles/output.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrBliz/Statiq.Community.git"
+  },
+  "author": "Liam Blizard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrBliz/Statiq.Community/issues"
+  },
+  "homepage": "https://github.com/MrBliz/Statiq.Community#readme",
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.2.8",
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "daisyui": "^2.51.6"
+  }
+}

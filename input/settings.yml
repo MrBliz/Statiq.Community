@@ -1,0 +1,2 @@
+PostSources: posts/**/*
+IsPost: => Outputs.FilterSources(Context.GetString("PostSources")).ContainsById(Document)

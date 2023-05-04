@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
 <meta charset="utf-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   @if(Document.ContainsKey(WebKeys.Description))
   {
@@ -11,7 +13,11 @@
     <meta name="author" content="@Document.GetString(WebKeys.Author)">
   }
 
-  <title>@Document.GetString("PageTitle")</title>
+  <title>@(Document.GetString("PageTitle") ?? Document.GetString("SiteTitle"))</title>
+  <link href="/styles/output.css" rel="stylesheet">
+</head>
 <body>
+    @RenderBody()
 </body>
+<script src="https://kit.fontawesome.com/72c63530f6.js" crossorigin="anonymous"></script>
 </html>

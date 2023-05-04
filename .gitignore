@@ -3,3 +3,6 @@ cache/
 .idea/
 obj/
 output/
+node_modules/
+temp/
+wwwroot/
