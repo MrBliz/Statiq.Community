@@ -8,7 +8,7 @@
 <div class="card w-96 bg-base-100 shadow-xl m-10">
     @if (Model.ContainsKey("Image"))
     {
-        <figure><img src="@Model.GetString("Image")" alt="@Model.GetString("Title")"/></figure>
+        <figure><img class="h-72 w-full object-cover" src="@Model.GetString("Image")" alt="@Model.GetString("Title")"/></figure>
     }
   <div class="card-body">
     <h2 class="card-title">@Model.GetString("Title")
