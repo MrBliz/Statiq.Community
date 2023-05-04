@@ -1,0 +1,56 @@
+@model IDocument
+
+@{
+    string excerpt = Model.GetString(Keys.Excerpt);
+}
+
+
+<div class="card w-96 bg-base-100 shadow-xl">
+    @if (Model.ContainsKey("Image"))
+    {
+        <figure><img src="@Model.GetString("Image")" alt="@Model.GetString("Title")"/></figure>
+    }
+  <div class="card-body">
+    <h2 class="card-title">@Html.DocumentLink(Model)
+        <span class="badge justify-end">@Model.GetString("Type")</span>
+    </h2>
+    @if(Model.ContainsKey("Lead"))
+    {
+        <div class="post-subtitle">@Model.GetString("Lead")</div>
+    }
+    <div class="card-actions justify-end">
+        @if(Model.ContainsKey("Webpage"))
+        {
+            <a class="btn" href="@Model.GetString("Webpage")" target="_blank">
+               <i class="fa-regular fa-globe"></i>
+            </a>
+        }
+        @if(Model.ContainsKey("Nuget"))
+        {
+            <a class="btn" href="@Model.GetString("Nuget")" target="_blank">
+                Nuget
+            </a>
+        }
+        @if(Model.ContainsKey("Github"))
+        {
+            <a class="btn" href="@Model.GetString("Github")" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        }
+    </div>
+  </div>
+</div>
+
+@* <div class="post-preview">
+    <h2 class="post-title">@Html.DocumentLink(Model)</h2>
+    @if(Model.ContainsKey("Lead"))
+    {
+        <div class="post-subtitle">@Model.GetString("Lead")</div>
+    }
+    <p class="post-meta">Published on @Model.GetDateTime(WebKeys.Published).ToLongDateString()</p>
+    @if (!string.IsNullOrEmpty(excerpt))
+    {
+        @Html.Raw(excerpt)
+        <p class="small"><a href="@Context.GetLink(Model)">Read more...</a></p>
+    }
+</div> *@
