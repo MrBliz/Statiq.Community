@@ -36,12 +36,4 @@
     <Touch Files="node_modules/.install-stamp" AlwaysCreate="true" />
   </Target>
 
-  <!--
-      2. Run npm run build before building the .NET project.
-      MSBuild runs NpmInstall before this task because of the DependsOnTargets attribute.
-   -->
-  <Target Name="NpmRunBuild" DependsOnTargets="NpmInstall" BeforeTargets="BeforeBuild;Run">
-    <Exec Command="npm run build" />
-  </Target>
-
 </Project>

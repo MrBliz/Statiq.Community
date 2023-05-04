@@ -10,6 +10,10 @@ namespace Statiq.Community
       await Bootstrapper
         .Factory
         .CreateWeb(args)
+        .ConfigureProcesses( p=>{
+                p.AddProcess(ProcessTiming.BeforeDeployment, "npm" , "install");
+                p.AddProcess(ProcessTiming.BeforeDeployment, "npm" , "run build");
+        })
         .RunAsync();
   }
 }
