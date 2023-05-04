@@ -9,4 +9,4 @@ chmod u+x /tmp/dotnet-install.sh
 popd
 
 ## publish project to known location for subsequent deployment by Netlify
-dotnet run --project ./blizard.io/blizard.io.csproj
+dotnet run --project ./Statiq.Community.csproj
