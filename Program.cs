@@ -12,7 +12,9 @@ namespace Statiq.Community
         .CreateWeb(args)
         .ConfigureProcesses( p=>{
                 p.AddProcess(ProcessTiming.BeforeDeployment, "npm" , "install");
-                p.AddProcess(ProcessTiming.BeforeDeployment, "npm" , "run build");
+                p.AddProcess(ProcessTiming.BeforeDeployment, _ =>  new ProcessLauncher ("npm" , "run build"){
+                    LogErrors = false
+                });
         })
         .RunAsync();
   }
