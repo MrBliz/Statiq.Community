@@ -5,13 +5,13 @@
 }
 
 
-<div class="card w-96 bg-base-100 shadow-xl">
+<div class="card w-96 bg-base-100 shadow-xl m-10">
     @if (Model.ContainsKey("Image"))
     {
         <figure><img src="@Model.GetString("Image")" alt="@Model.GetString("Title")"/></figure>
     }
   <div class="card-body">
-    <h2 class="card-title">@Html.DocumentLink(Model)
+    <h2 class="card-title">@Model.GetString("Title")
         <span class="badge justify-end">@Model.GetString("Type")</span>
     </h2>
     @if(Model.ContainsKey("Lead"))
