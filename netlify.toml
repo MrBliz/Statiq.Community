@@ -1,0 +1,6 @@
+[build]
+  command = ./netlify.build.sh
+
+[context.production]
+  publish = "output/"
+  branch = "main"
