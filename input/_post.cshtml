@@ -32,10 +32,11 @@
             </a>
         }
         @if(Model.ContainsKey("Github"))
-        {
+        {         
             <a class="btn" href="@Model.GetString("Github")" target="_blank" title="GitHub">
                 <i class="fa-brands fa-github"></i>
             </a>
+            <a class="btn"  style="width: 50px;" target="_blank" rel="noopener noreferrer nofollow" title="Open in Gitpod" href="https://gitpod.io/#@Model.GetString("Github")"><img src="images/logo-mark.svg" alt="Open in Gitpod"></a>
         }
     </div>
   </div>
